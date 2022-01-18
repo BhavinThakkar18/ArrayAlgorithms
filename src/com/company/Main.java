@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.Arrays;
 
 public class Main {
@@ -19,13 +20,38 @@ public class Main {
     {
         return Arrays.stream(arr).filter(x->x==item).findAny();
     }
-
+    public static boolean binarySearch(int[] arr,int item)
+    {
+        int min =0;
+        int max= arr.length-1;
+        Arrays.sort(arr);
+        while(min<=max)
+        {
+            int mid=(min+max)/2;
+            if(arr[mid]==item)
+            {
+                return true;
+            }
+            else if(arr[mid]>item)
+            {
+                max=mid-1;
+            }
+            else
+            {
+                min=mid+1;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
 	// write your code here
-        int[] arr={1,2,3,4,5};
-        System.out.println(linearSearch(arr,1));
-        System.out.println(linearSearch(arr,8));
-        linearSearch2(arr,1).ifPresent(System.out::println);
-        linearSearch2(arr,8).ifPresent(System.out::println);
+        int[] arr={2,1,4,3,5};
+//        System.out.println(linearSearch(arr,1));
+//        System.out.println(linearSearch(arr,8));
+//        linearSearch2(arr,1).ifPresent(System.out::println);
+//        linearSearch2(arr,8).ifPresent(System.out::println);
+        System.out.println(binarySearch(arr,3));
+        System.out.println(binarySearch(arr,1));
+        System.out.println(binarySearch(arr,8));
     }
 }

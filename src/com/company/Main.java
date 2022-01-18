@@ -72,6 +72,34 @@ public class Main {
         return arr;
 
     }
+    public static int []leftShiftArray(int[] arr)
+    {
+        int temp = arr[0];
+        for(int i=1;i<arr.length;i++)
+        {
+            arr[i-1]=arr[i];
+        }
+        arr[arr.length-1]=temp;
+//        for(int i=0;i<arr.length;i++)
+//        {
+//           System.out.println(arr[i]);
+//        }
+        return arr;
+    }
+    public static int[] rightShiftArray(int[] arr)
+    {
+        int temp=arr[arr.length-1];
+        for(int i=arr.length-1;i>0;i--)
+        {
+            arr[i]=arr[i-1];
+        }
+        arr[0]=temp;
+//        for(int i=0;i<arr.length;i++)
+//        {
+//            System.out.println(arr[i]);
+//        }
+        return arr;
+    }
     public static void main(String[] args) {
 	// write your code here
         int[] arr={2,1,4,3};
@@ -83,6 +111,7 @@ public class Main {
 //        System.out.println(binarySearch(arr,1));
 //        System.out.println(binarySearch(arr,8));
         //System.out.println(findEvenNums(new int[]{9, 3, 2, -8, 12, -16},new int[]{0,-3,-8,-35,40,20,7}));
-       reverseArray(arr);
+       leftShiftArray(arr);
+       rightShiftArray(arr);
     }
 }

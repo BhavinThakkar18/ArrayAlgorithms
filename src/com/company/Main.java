@@ -53,9 +53,28 @@ public class Main {
         }
         return ansArray;
     }
+    public  static int[] reverseArray(int[] arr)
+    {
+        int i=0;
+        int j=arr.length-1;
+        while(i<=j)
+        {
+            int temp=arr[j];
+            arr[j]=arr[i];
+            arr[i]=temp;
+            i++;
+            j--;
+        }
+//        for(i=0;i<arr.length;i++)
+//        {
+//            System.out.println(arr[i]);
+//        }
+        return arr;
+
+    }
     public static void main(String[] args) {
 	// write your code here
-        int[] arr={2,1,4,3,5};
+        int[] arr={2,1,4,3};
 //        System.out.println(linearSearch(arr,1));
 //        System.out.println(linearSearch(arr,8));
 //        linearSearch2(arr,1).ifPresent(System.out::println);
@@ -63,6 +82,7 @@ public class Main {
 //        System.out.println(binarySearch(arr,3));
 //        System.out.println(binarySearch(arr,1));
 //        System.out.println(binarySearch(arr,8));
-        System.out.println(findEvenNums(new int[]{9, 3, 2, -8, 12, -16},new int[]{0,-3,-8,-35,40,20,7}));
+        //System.out.println(findEvenNums(new int[]{9, 3, 2, -8, 12, -16},new int[]{0,-3,-8,-35,40,20,7}));
+       reverseArray(arr);
     }
 }
